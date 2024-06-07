@@ -12,6 +12,6 @@ export default function Home() {
     );
   }
     return (
-      <div>Logged succesfull in with {session.user.email}!</div>
+      <div>Logged in with {session.user.email}!</div>
     )
 }
