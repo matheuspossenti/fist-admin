@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input, textarea{
+  @apply border-2 border-gray-300 rounded-md px-1 w-full;
+  @apply mb-2;
+}
+
+input:focus, textarea:focus{
+  @apply border-blue-900;
+}
+
+h1{
+  @apply text-blue-900 mb-2 text-xl;
+}
+
+label{
+  @apply text-blue-900;
+}
+
+.btn-primary{
+  @apply bg-blue-900 text-white py-1 px-4 rounded-md;
+}
+
+table.basic{
+  @apply w-full;
+}
+
+table.basic thead tr td{
+  @apply bg-blue-100;
+}
+
+table.basic tr td{
+  @apply border border-blue-200 p-1;
+}
+
+table.basic a{
+  @apply bg-blue-900 text-white text-sm px-2 p-1 rounded-md inline-flex gap-1 mr-1;
+}
+
+.btn-red, .btn-default{
+  @apply px-4 py-1 rounded-md;
+}
+
+.btn-red{
+  @apply bg-red-800 text-white;
+}
+
+.btn-default{
+  @apply bg-gray-300;
+}
