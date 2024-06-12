@@ -10,14 +10,19 @@
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.2.0",
+    "@aws-sdk/client-s3": "^3.592.0",
     "axios": "^1.7.2",
+    "mime-types": "^2.1.35",
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.1",
     "multiparty": "^4.2.3",
     "next": "^14.2.3",
     "next-auth": "^4.24.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-sortablejs": "^6.1.4",
+    "react-spinners": "^0.13.8",
+    "sortablejs": "^1.15.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
