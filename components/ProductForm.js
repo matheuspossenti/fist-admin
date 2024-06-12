@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function ProductForm({
@@ -7,9 +7,8 @@ export default function ProductForm({
   title: existingTitle,
   images,
   description: existingDescription,
-  price: existingPrice})
-  {
-
+  price: existingPrice,
+}) {
   const [title, setTitle] = useState(existingTitle || "");
   const [description, setDescription] = useState(existingDescription || "");
   const [price, setPrice] = useState(existingPrice || "");
@@ -18,9 +17,9 @@ export default function ProductForm({
   async function saveProduct(ev) {
     ev.preventDefault();
     const data = { title, description, price };
-    if(_id){
+    if (_id) {
       //update
-      await axios.put("/api/products", {...data, _id});
+      await axios.put("/api/products", { ...data, _id });
     } else {
       //create
       await axios.post("/api/products", data);
@@ -30,6 +29,22 @@ export default function ProductForm({
   if (goToProducts === true) {
     router.push("/products");
   }
+
+  async function uploadImages(ev){
+    const files = ev.target?.files;
+    if(files?.length > 0){
+      const data = new FormData();
+      for(const file of files){
+        data.append("file", file)
+      }
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: data
+      })
+      console.log(res);
+    }
+  }
+
   return (
     <form onSubmit={saveProduct}>
       <label>Nome do produto</label>
@@ -39,12 +54,29 @@ export default function ProductForm({
         value={title}
         onChange={(ev) => setTitle(ev.target.value)}
       />
-      <label>
-        Fotos
-
-      </label>
+      <label>Fotos</label>
       <div className="mb-2">
-        {!images?.length && <p>Nenhuma foto para esse produto</p>}
+        <label className="w-24 h-24 border flex flex-col items-center justify-center text-center rounded-lg cursor-pointer text-gray-900">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+            />
+          </svg>
+          <div>
+            Upload
+          </div>
+          <input type="file" onChange={uploadImages} className="hidden"/>
+        </label>
+        {!images?.length && <p>Nenhuma imagem cadastrada</p>}
       </div>
       <label>Descrição</label>
       <textarea
