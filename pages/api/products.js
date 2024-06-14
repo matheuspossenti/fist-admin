@@ -14,9 +14,10 @@ export default async function handle(req, res){
   }
 
   if(method === 'POST'){
-    const {title, images, description, price} = req.body;
+    const {title, category, images, description, price} = req.body;
     const productDoc = await Product.create({
       title,
+      category,
       images,
       description,
       price
@@ -25,8 +26,8 @@ export default async function handle(req, res){
   }
 
   if(method === 'PUT'){
-    const {title, images, description, price, _id} = req.body;
-    await Product.updateOne({_id}, {title, images, description, price});
+    const {title, category, images, description, price, _id} = req.body;
+    await Product.updateOne({_id}, {title, category, images, description, price});
     res.json({message: 'Produto atualizado com sucesso'});
   }
 

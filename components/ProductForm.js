@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 import { ReactSortable } from "react-sortablejs";
 import { set } from "mongoose";
@@ -8,20 +8,29 @@ import { set } from "mongoose";
 export default function ProductForm({
   _id,
   title: existingTitle,
+  category: existingCategory,
   images: existingImages,
   description: existingDescription,
   price: existingPrice,
 }) {
   const [title, setTitle] = useState(existingTitle || "");
+  const [category, setCategory] = useState(existingCategory || "");
   const [images, setImages] = useState(existingImages || []);
   const [description, setDescription] = useState(existingDescription || "");
   const [price, setPrice] = useState(existingPrice || "");
   const [goToProducts, setGoToProducts] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const [categories, setCategories] = useState([]);
   const router = useRouter();
+  useEffect(() => {
+    axios.get('/api/categories').then((result) => {
+      setCategories(result.data);
+    });
+  }, []);
+
   async function saveProduct(ev) {
     ev.preventDefault();
-    const data = { title, images, description, price };
+    const data = { title, category, images, description, price };
     if (_id) {
       //update
       await axios.put("/api/products", { ...data, _id });
@@ -64,6 +73,15 @@ export default function ProductForm({
         value={title}
         onChange={(ev) => setTitle(ev.target.value)}
       />
+      <label>Categoria</label>
+      <select value={category} onChange={ev => setCategory(ev.target.value)}>
+        <option value="">Sem categoria</option>
+        {categories.length > 0 && categories.map((c) => (
+          <option key={c._id} value={c._id}>
+            {c.name}
+          </option>
+        ))}
+      </select>
       <label>Fotos</label>
       <div className="mb-2 flex flex-wrap gap-2">
         <ReactSortable list={images} setList={updateImagesOrder} className="flex flex-wrap gap-1">
