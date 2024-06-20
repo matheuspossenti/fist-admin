@@ -28,7 +28,7 @@ function Categories({ swal }) {
       parentCategory,
       properties: properties.map((p) => ({
         name: p.name,
-        value: p.value.split(","),
+        value: p.value.split(','),
       })),
     };
     if (editedCategory) {
@@ -39,6 +39,8 @@ function Categories({ swal }) {
       await axios.post("/api/categories", data);
     }
     setName("");
+    setParentCategory("");
+    setProperties([]);
     fetchCategories();
   }
 
@@ -46,6 +48,7 @@ function Categories({ swal }) {
     setEditedCategory(category);
     setName(category.name);
     setParentCategory(category.parent?._id);
+    setProperties(category.properties);
   }
 
   function deleteCategory(category) {
@@ -81,21 +84,19 @@ function Categories({ swal }) {
     });
   }
 
-  function handlePropertyNameChange(index, newName) {
-    setProperties((prevProperties) => {
-      const updatedProperties = prevProperties.map((property, idx) =>
-        idx === index ? { ...property, name: newName } : property
-      );
-      return updatedProperties;
+  function handlePropertyNameChange(index,property,newName) {
+    setProperties(prev => {
+      const properties = [...prev];
+      properties[index].name = newName;
+      return properties;
     });
   }
 
-  function handlePropertyValueChange(index, newValue) {
-    setProperties((prevProperties) => {
-      const updatedProperties = prevProperties.map((property, idx) =>
-        idx === index ? { ...property, value: newValue } : property
-      );
-      return updatedProperties;
+  function handlePropertyValuesChange(index,property,newValue) {
+    setProperties(prev => {
+      const properties = [...prev];
+      properties[index].value = newValue;
+      return properties;
     });
   }
 
@@ -141,7 +142,7 @@ function Categories({ swal }) {
                 <input
                   className="mb-0"
                   type="text"
-                  value={properties.value}
+                  value={property.name}
                   onChange={(ev) =>
                     handlePropertyNameChange(index, property, ev.target.value)
                   }
@@ -150,9 +151,9 @@ function Categories({ swal }) {
                 <input
                   className="mb-0"
                   type="text"
-                  value={properties.value}
+                  value={property.value}
                   onChange={(ev) =>
-                    handlePropertyValueChange(index, property, ev.target.value)
+                    handlePropertyValuesChange(index, property, ev.target.value)
                   }
                   placeholder="Valor da propriedade"
                 />
@@ -166,7 +167,7 @@ function Categories({ swal }) {
               </div>
             ))}
         </div>
-        <div className="flex-gap-1">
+        <div className="flex gap-1">
           {editedCategory && (
             <button
               type="button"
