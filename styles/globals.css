@@ -7,7 +7,8 @@ img{
 }
 
 input, textarea, select{
-  @apply border-2 border-gray-300 rounded-md px-1 w-full;
+  @apply border border-gray-200 rounded-md px-1 w-full py-2 px-2;
+  @apply shadow-sm;
   @apply mb-2;
 }
 
@@ -16,31 +17,31 @@ input:focus, textarea:focus, select:focus{
 }
 
 h1{
-  @apply text-blue-900 mb-2 text-xl;
+  @apply text-gray-800 mb-4 text-xl;
 }
 
 label{
-  @apply text-blue-900;
+  @apply text-gray-700 text-sm;
 }
 
 .btn-primary{
-  @apply bg-blue-900 text-white py-1 px-4 rounded-md;
+  @apply bg-primary text-white py-1 px-4 rounded-md;
 }
 
 table.basic{
-  @apply w-full;
+  @apply w-full bg-white rounded-md shadow-md;
 }
 
 table.basic thead tr td{
-  @apply bg-blue-100;
+  @apply text-sm text-gray-600 uppercase border-b border-gray-300 px-4 py-2;
 }
 
 table.basic tr td{
-  @apply border border-blue-200 p-1;
+  @apply px-4 py-1;
 }
 
 table.basic a{
-  @apply bg-blue-900 text-white text-sm px-2 p-1 rounded-md inline-flex gap-1 mr-1;
+  @apply px-4 rounded-md inline-flex gap-1 mx-1 items-center text-sm;
 }
 
 .btn-red, .btn-default{
@@ -48,7 +49,7 @@ table.basic a{
 }
 
 .btn-red{
-  @apply bg-red-800 text-white;
+  @apply bg-red-200 text-red-600 py-1 rounded-md;
 }
 
 .btn-default{
