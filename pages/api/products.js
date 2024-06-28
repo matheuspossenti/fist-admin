@@ -20,7 +20,7 @@ export default async function handle(req, res) {
       req.body;
     const productDoc = await Product.create({
       title,
-      category,
+      category: category || null,
       images,
       description,
       price,
@@ -41,7 +41,7 @@ export default async function handle(req, res) {
     } = req.body;
     await Product.updateOne(
       { _id },
-      { title, category, images, description, price, properties }
+      { title, category: category || null, images, description, price, properties }
     );
     res.json({ message: "Produto atualizado com sucesso" });
   }

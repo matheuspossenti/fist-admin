@@ -7,6 +7,8 @@ const ProductSchema = new Schema({
   description: String,
   price: {type: Number, required: true},
   properties: {type: Object},
+}, {
+  timestamps: true,
 });
 
 export const Product = models.Product || model('Product', ProductSchema);
