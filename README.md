@@ -1,8 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fist Admin - E-commerce de Chocolates
 
-## Getting Started
+Este é um projeto [Next.js](https://nextjs.org/) inicializado com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), desenvolvido para a implementação de um e-commerce dedicado à venda de chocolates. O projeto foi realizado por Felipe Veroneze, Matheus Possenti, Rafael Bressan Felicetti, Thiago Trzcinski e Vinicius Slongo como parte das disciplinas de Engenharia de Software, Projeto Aplicado e Desenvolvimento Web.
 
-First, run the development server:
+## Introdução
+
+Este projeto de e-commerce foi criado no contexto acadêmico, integrando práticas de desenvolvimento web com as demandas de um sistema comercial realista. O objetivo principal é aplicar conhecimentos teóricos em um projeto prático que ofereça uma plataforma robusta e intuitiva para a venda de chocolates, visando uma experiência de compra agradável e eficiente para o usuário.
+
+## Resumo
+
+O e-commerce para venda de chocolates foi concebido para ser uma plataforma funcional que simula um ambiente de negócios real, permitindo aos alunos aplicar suas habilidades em desenvolvimento web e engenharia de software. O sistema inclui funcionalidades essenciais como gestão de produtos, pedidos e usuários, autenticação de usuários e integração com um banco de dados relacional. Utilizando metodologias ágeis para o planejamento e execução do projeto, o grupo utilizou ferramentas como Meistertask para a gestão das tarefas, o que facilitou o acompanhamento e a distribuição das atividades entre os membros. O resultado final é uma plataforma que não só suporta todas as operações comerciais básicas mas também oferece uma interface amigável e responsiva para uma experiência de compra superior.
+
+## Conclusão
+
+O desenvolvimento do e-commerce de chocolates permitiu aos alunos aplicar de maneira prática e integrada os conhecimentos adquiridos nas disciplinas de Engenharia de Software, Projeto Aplicado e Desenvolvimento Web. A combinação de teoria e prática resultou em uma compreensão mais profunda das tecnologias web modernas e das práticas de desenvolvimento de software, culminando em um produto funcional que atende às necessidades dos usuários finais.
+
+## Primeiros Passos
+
+Para iniciar o servidor de desenvolvimento:
 
 ```bash
 npm run dev
@@ -14,27 +28,17 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado. Você pode começar a editar a página modificando `pages/index.js`. A página será atualizada automaticamente conforme você edita o arquivo.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Deploy no Vercel
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Você pode também visualizar o projeto na [Plataforma Vercel](https://fist-front.vercel.app/).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Saiba Mais
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Para aprender mais sobre Next.js, confira os seguintes recursos:
 
-## Learn More
+- [Documentação do Next.js](https://nextjs.org/docs) - aprenda sobre os recursos e a API do Next.js.
+- [Tutorial Interativo Next.js](https://nextjs.org/learn) - um tutorial interativo do Next.js.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Confira nossa [documentação de deploy do Next.js](https://nextjs.org/docs/deployment) para mais detalhes.
