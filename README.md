@@ -8,7 +8,7 @@ Este projeto de e-commerce foi criado no contexto acadêmico, integrando prátic
 
 ## Resumo
 
-O e-commerce para venda de chocolates foi concebido para ser uma plataforma funcional que simula um ambiente de negócios real, permitindo aos alunos aplicar suas habilidades em desenvolvimento web e engenharia de software. O sistema inclui funcionalidades essenciais como gestão de produtos, pedidos e usuários, autenticação de usuários e integração com um banco de dados relacional. Utilizando metodologias ágeis para o planejamento e execução do projeto, o grupo utilizou ferramentas como Meistertask para a gestão das tarefas, o que facilitou o acompanhamento e a distribuição das atividades entre os membros. O resultado final é uma plataforma que não só suporta todas as operações comerciais básicas mas também oferece uma interface amigável e responsiva para uma experiência de compra superior.
+O e-commerce para venda de chocolates foi concebido para ser uma plataforma funcional que simula um ambiente de negócios real, permitindo aos alunos aplicar suas habilidades em desenvolvimento web e engenharia de software. O sistema inclui funcionalidades essenciais como gestão de produtos, pedidos e usuários, autenticação de usuários e integração com um banco de dados não relacional. Utilizando metodologias ágeis para o planejamento e execução do projeto, o grupo utilizou ferramentas como Meistertask para a gestão das tarefas, o que facilitou o acompanhamento e a distribuição das atividades entre os membros. O resultado final é uma plataforma que não só suporta todas as operações comerciais básicas mas também oferece uma interface amigável e responsiva para uma experiência de compra superior.
 
 ## Conclusão
 
